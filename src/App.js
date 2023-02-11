@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Grid, Button } from '@mui/material'
+import "./App.css"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container>
+      <Grid container style={{position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)"}}>
+        <Grid item xs={12} sm={5} my={4} style={{display: "grid", placeItems: "center"}}>
+          <div style={{textAlign: "center"}}>
+            <Button variant="contained" style={{fontSize: "2rem"}}>＋</Button>
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={2} my={4} style={{display: "grid", placeItems: "center"}}>
+          <div style={{textAlign: "center"}}>
+            <h1 style={{fontSize: "5rem"}}>2</h1>
+          </div>
+        </Grid>
+        <Grid item xs={12} sm={5} my={4} style={{display: "grid", placeItems: "center"}}>
+          <div style={{textAlign: "center"}}>
+            <Button variant="contained" style={{fontSize: "2rem"}}>ー</Button>
+          </div>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 }
 
