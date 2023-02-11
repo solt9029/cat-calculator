@@ -1,9 +1,14 @@
 import { Grid, Button } from '@mui/material'
 import "./App.css"
 import { useState } from "react";
+import useSound from 'use-sound';
+import plusSound from './plus.mp3';
+import minusSound from './minus.mp3';
 
 function App() {
   const [count, setCount] = useState(0);
+  const [playPlusSound] = useSound(plusSound);
+  const [playMinusSound] = useSound(minusSound);
 
   return (
     <Grid container>
@@ -11,7 +16,7 @@ function App() {
         <Grid item xs={12} sm={5} my={4} style={{display: "grid", placeItems: "center"}}>
           <div style={{textAlign: "center"}}>
             <Button variant="contained" style={{fontSize: "2rem"}} onClick={() => {
-              if (count < 7) { setCount(count + 1); }
+              if (count < 7) { setCount(count + 1); playPlusSound(); }
             }}>＋</Button>
           </div>
         </Grid>
@@ -23,7 +28,7 @@ function App() {
         <Grid item xs={12} sm={5} my={4} style={{display: "grid", placeItems: "center"}}>
           <div style={{textAlign: "center"}}>
             <Button variant="contained" style={{fontSize: "2rem"}} onClick={() => {
-              if (count > 0) { setCount(count - 1); }
+              if (count > 0) { setCount(count - 1); playMinusSound(); }
             }}>ー</Button>
           </div>
         </Grid>
